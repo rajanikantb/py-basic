@@ -15,17 +15,12 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import include, path
-from crudapplication import views
 
 urlpatterns = [
     path('', include('login.urls')),
     path('polls/', include('polls.urls')),
     path('login/', include('login.urls')),
     path('admin/', admin.site.urls),
-    path('emp/', views.emp),
-    path('show/', views.show),
-    path('edit/<int:id>', views.edit),
-    path('update/<int:id>', views.update),
-    path('delete/<int:id>', views.delete),
+    path('crudapp/', include('crudapplication.urls')),
 ]
 
